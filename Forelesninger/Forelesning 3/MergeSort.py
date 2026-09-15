@@ -1,11 +1,31 @@
-def merge(A, B):
+def merge(A, low, mid, high:int):
     """
-        Function to be called to merge two sorted sub_lists    
+        Takes an array A, splits in two and sorts
     """
-    pass
 
-def merge_sort(A, s, e):
+    L = A[low : mid + 1]
+    R = A[mid + 1 : high + 1]
+
+    i = 0
+    j = 0
+
+    for k in range (high):
+        pass
+        
+
+
+def merge_sort(A, low=0, high=None):
     """
-        Split, sort if only two elements
+        Takes an Array A, finds its midpoint -> sort/merges recursively
     """
-    pass
+
+    if high is None: 
+        high = len(A) - 1
+
+    mid = (high + low) // 2
+
+    merge_sort(A, low, mid)
+    merge_sort(A, mid, high)
+
+    merge(A, low, mid, high)
+    
